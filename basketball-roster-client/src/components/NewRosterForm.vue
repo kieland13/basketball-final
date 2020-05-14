@@ -5,7 +5,7 @@
         </div>
 
         <div class="addNewPlayerArea">
-            <h4 class="card-title">Add new player</h4>
+            <h4 class="card-title">Use this to create a roster for your college basketball player</h4>
 
             <div class="form-group">
                 <label for="name">Name</label>

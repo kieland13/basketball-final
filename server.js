@@ -1,9 +1,12 @@
 let express = require('express')
 let bodyParser = require('body-parser')
 let api_routes = require('./routes/api.js')
+let path = require('path')
 
 //this will configure the app
 let app = express()
+
+app.use(express.static(path.join(__dirname, 'hello-vue', 'dist')))
 
 app.use(bodyParser.json())
 
