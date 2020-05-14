@@ -24,6 +24,6 @@ app.use(function (err, req, res, next) {
 })
 
 //This will start the server at the 3000 port
-let server = app.listen(process.env.Port || 3000, function() {
+let server = app.listen(process.env.PORT || 3000, function() {
     console.log('Express server running on port', server.address().port)
 })
