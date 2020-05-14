@@ -42,16 +42,35 @@ export default {
     components: { PlayerRow },
     data() {
         return {
-            editTable: false
+            editTable: false,
+            startingCounter: 0,
+            startingLimit: 5,
         }
     },
     props: {
         players: Array
     },
     methods: {
+
+        //when the checkbox is checked, it will only let them start if there are 5 or less starters
         playerStartingOrNot(player) {
-        this.$emit('player-starting', player)        
+            let startingCounter = 0
+            this.players.forEach( p => {
+                if (p.starting == true) {
+                    startingCounter++
+                }
+            })
+
+            if (startingCounter > 5) {
+                player.starting = false
+                alert('Only 5 players can start.')
+            }
+            
+            else {
+            this.$emit('player-starting', player)        
+            }
         },
+        //this will remove a player with the button
         playerRemoved(player) {
             this.$emit('remove-player', player)
         }

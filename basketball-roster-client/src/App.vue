@@ -35,12 +35,18 @@ export default {
   },
   methods: {
     newPlayerAdded(player) {
+      //will only add players if there are 15 or less players on roster
+      if (this.players.length < 10)
+      {
       this.$player_api.addPlayer(player).then( player => {
         this.updatePlayers()
       }).catch( err => {
         let msg = err.response.data.join(', ')
         alert('Error adding player.\n' + msg)
       })
+      } else {
+        alert('cannot add more players')
+      }
     },
     playerStartingOrNot(player) {
       this.$player_api.updatePlayer(player).then( () => {
