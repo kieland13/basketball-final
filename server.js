@@ -6,7 +6,7 @@ let path = require('path')
 //this will configure the app
 let app = express()
 
-app.use(express.static(path.join(__dirname, 'hello-vue', 'dist')))
+app.use(express.static(path.join(__dirname, 'basketball-roster-client', 'dist')))
 
 app.use(bodyParser.json())
 
